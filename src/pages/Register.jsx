@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 export const Register = () => {
   return (
     <>
@@ -134,12 +134,12 @@ export const Register = () => {
               />
             </div>
             {/* Optional end */}
-            <a
-              href="/login"
+            <Link
+              to="/login"
               className="label-text-alt mt-3 link link-hover  text-lg font-medium text-black"
             >
               You Have A Account? Login Now.
-            </a>
+            </Link>
             <div className="form-control mt-6">
               <button className="capitalize btn btn-md bg-primary text-black border-none hover:text-primary rounded-md">
                 Register

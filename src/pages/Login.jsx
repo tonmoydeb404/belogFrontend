@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 export const Login = () => {
   return (
     <>
@@ -10,7 +10,7 @@ export const Login = () => {
             <div className="form-control">
               <label className="label">
                 <span className="label-text text-lg font-medium text-black">
-                  Email 
+                  Email
                   <span className="text-red-500 text-2xl font-bold">*</span>
                 </span>
               </label>
@@ -24,7 +24,7 @@ export const Login = () => {
             <div className="form-control">
               <label className="label">
                 <span className="label-text  text-lg font-medium text-black">
-                  Password 
+                  Password
                   <span className="text-red-500 text-2xl font-bold">*</span>
                 </span>
               </label>
@@ -35,18 +35,18 @@ export const Login = () => {
                 required
               />
 
-              <a
-                href="/forget-password"
+              <Link
+                to="/forget-password"
                 className="label-text-alt mt-3 link link-hover  text-lg font-medium text-black"
               >
                 Forgot password?
-              </a>
-              <a
-                href="/register"
+              </Link>
+              <Link
+                to="/register"
                 className="label-text-alt mt-3 link link-hover  text-lg font-medium text-black"
               >
                 Don't Have Account? Register Now.
-              </a>
+              </Link>
             </div>
             <div className="form-control mt-6">
               <button className="capitalize btn btn-md bg-primary text-black border-none hover:text-primary rounded-md">
