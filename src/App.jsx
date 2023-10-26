@@ -10,6 +10,7 @@ import { Tech } from "./pages/Tech";
 import { Programming } from "./pages/Programming";
 import { Research } from "./pages/Research";
 import { BlogDetails } from "./pages/BlogDetails";
+import { ForgotPassword } from "./pages/ForgotPassword";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -23,6 +24,7 @@ function App() {
         <Route path="/programming" element={<Programming />} />
         <Route path="/research" element={<Research />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/register" element={<Register />} />
         <Route path="/blog-details" element={<BlogDetails />} />
       </Routes>

@@ -36,7 +36,7 @@ export const Login = () => {
               />
 
               <Link
-                to="/forget-password"
+                to="/forgot-password"
                 className="label-text-alt mt-3 link link-hover  text-lg font-medium text-black"
               >
                 Forgot password?
