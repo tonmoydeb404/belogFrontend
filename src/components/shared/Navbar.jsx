@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import logo from "../../assets/images/logo.jpg";
 import React from "react";
 export const Navbar = () => {
@@ -29,21 +30,12 @@ export const Navbar = () => {
           </div>
         </div>
         <div className="navbar bg-gray-400">
-          <div className="navbar-start">
-            <ul className="flex">
-              <li>
-                <a className="btn btn-md rounded-md me-2 text-white hover:text-warning">Home</a>
-              </li>
-              <li>
-                <a className="btn btn-md rounded-md me-2 text-white hover:text-warning">Tech</a>
-              </li>
-              <li>
-                <a className="btn btn-md rounded-md me-2 text-white hover:text-warning">Programming</a>
-              </li>
-              <li>
-                <a className="btn btn-md rounded-md me-2 text-white hover:text-warning">Research</a>
-              </li>
-            </ul>
+          <div className="navbar-start" style={{listStyle:'none'}}>
+          <li><NavLink to="/" className="me-3 bg-gray-400 btn rounded-md border-none text-md text-black capitalize font-bold text-lg">Home</NavLink></li>
+          <li><NavLink to="/tech" className="me-3 bg-gray-400 btn rounded-md border-none text-md text-black capitalize font-bold text-lg">Tech</NavLink></li>
+          <li><NavLink to="/programming" className="me-3 bg-gray-400 btn rounded-md border-none text-md text-black capitalize font-bold text-lg">Programming</NavLink></li>
+          <li><NavLink to="/research" className="me-3 bg-gray-400 btn rounded-md border-none text-md text-black capitalize font-bold text-lg">Research</NavLink></li>
+
           </div>
         </div>
       </div>
