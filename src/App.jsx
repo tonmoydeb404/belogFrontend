@@ -11,6 +11,9 @@ import { Programming } from "./pages/Programming";
 import { Research } from "./pages/Research";
 import { BlogDetails } from "./pages/BlogDetails";
 import { ForgotPassword } from "./pages/ForgotPassword";
+import { Admin } from "./pages/Admin";
+import { CreateBlog } from "./components/CreateBlog";
+import { EditBlog } from "./components/EditBlog";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -27,6 +30,9 @@ function App() {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/register" element={<Register />} />
         <Route path="/blog-details" element={<BlogDetails />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/create-blog" element={<CreateBlog />} />
+        <Route path="/edit-blog" element={<EditBlog />} />
       </Routes>
       <Footer />
     </>

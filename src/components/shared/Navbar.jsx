@@ -68,6 +68,14 @@ export const Navbar = () => {
                 Research
               </NavLink>
             </li>
+            <li>
+              <NavLink
+                to="/admin"
+                className="me-3 bg-gray-400 btn rounded-md border-none text-md text-black capitalize font-bold text-lg"
+              >
+                Admin
+              </NavLink>
+            </li>
           </div>
 
           <li>
