@@ -6,7 +6,7 @@ export const BlogDetails = () => {
     <>
       <ol className="breadcrumbnav m-5 -mb-5">
         <li className="me-1">
-          <Link to="/PVTDRproject">Home</Link>
+          <Link to="/belogFrontend">Home</Link>
         </li>
         <li>Blog-Details</li>
       </ol>

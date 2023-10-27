@@ -22,7 +22,7 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route path="/PVTDRproject" element={<Home />} />
+        <Route path="/belogFrontend" element={<Home />} />
         <Route path="/tech" element={<Tech />} />
         <Route path="/programming" element={<Programming />} />
         <Route path="/research" element={<Research />} />

@@ -7,7 +7,7 @@ export const Footer = () => {
     <>
       <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded">
         <nav className="grid grid-flow-col gap-4">
-          <Link className="link link-hover" to="/PVTDRproject">
+          <Link className="link link-hover" to="/belogFrontend">
             Home
           </Link>
           <Link className="link link-hover" to="/tech">
