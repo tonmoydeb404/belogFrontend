@@ -3,7 +3,7 @@ import DashboardStat from "../../components/stats/DashboardStat";
 
 const Dashboard = () => {
   return (
-    <div className="mt-5">
+    <div className="mt-10">
       <div className="stats stats-vertical sm:stats-horizontal shadow w-full border border-neutral rounded-lg mb-5">
         <DashboardStat title={"Total Visitors"} value={"30K"} />
         <DashboardStat title={"New Visitors"} value={"10.5K"} />
