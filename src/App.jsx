@@ -1,30 +1,29 @@
-import { useState } from "react";
-import "./App.css";
-import { Navbar } from "./components/shared/Navbar";
 import { Route, Routes } from "react-router-dom";
-import { Home } from "./pages/Home";
-import { Footer } from "./components/shared/Footer";
-import { Login } from "./pages/Login";
-import { Register } from "./pages/Register";
-import { Tech } from "./pages/Tech";
-import { Programming } from "./pages/Programming";
-import { Research } from "./pages/Research";
-import { BlogDetails } from "./pages/BlogDetails";
-import { ForgotPassword } from "./pages/ForgotPassword";
-import { Admin } from "./pages/Admin";
 import { CreateBlog } from "./components/CreateBlog";
 import { EditBlog } from "./components/EditBlog";
+import { Footer } from "./components/shared/Footer";
+import { Navbar } from "./components/shared/Navbar";
+import BlogLayout from "./layout/BlogLayout";
+import { Admin } from "./pages/Admin";
+import { BlogDetails } from "./pages/BlogDetails";
+import { ForgotPassword } from "./pages/ForgotPassword";
+import { Home } from "./pages/Home";
+import { Login } from "./pages/Login";
+import { Programming } from "./pages/Programming";
+import { Register } from "./pages/Register";
+import { Research } from "./pages/Research";
+import { Tech } from "./pages/Tech";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <Navbar />
       <Routes>
-        <Route path="/belogFrontend" element={<Home />} />
-        <Route path="/tech" element={<Tech />} />
-        <Route path="/programming" element={<Programming />} />
+        <Route element={<BlogLayout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/tech" element={<Tech />} />
+          <Route path="/programming" element={<Programming />} />
+        </Route>
         <Route path="/research" element={<Research />} />
         <Route path="/login" element={<Login />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
