@@ -22,6 +22,7 @@ export default {
           "base-100": "#18181B",
 
           "--rounded-btn": "0.3rem",
+          "--btn-text-case": "unset",
         },
       },
     ],
