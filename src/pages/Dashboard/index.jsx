@@ -10,7 +10,7 @@ const Dashboard = () => {
         <DashboardStat title={"Total Articles"} value={"99"} />
       </div>
 
-      <div className="grid sm:grid-cols-2 gap-4">
+      <div className="grid sm:grid-cols-2 gap-2">
         <DashboardCard
           title={"Posts"}
           value={"104"}
