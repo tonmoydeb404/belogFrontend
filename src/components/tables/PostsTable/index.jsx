@@ -11,7 +11,6 @@ const PostsTable = () => {
             <th>Status</th>
             <th>Published</th>
             <th>Edited</th>
-            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
