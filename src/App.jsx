@@ -9,7 +9,6 @@ import UpdatePost from "./pages/Dashboard/Posts/UpdatePost";
 import Home from "./pages/Home";
 
 import Login from "./pages/Auth/Login";
-import Reset from "./pages/Auth/Reset";
 import Post from "./pages/Post";
 
 function App() {
@@ -18,7 +17,6 @@ function App() {
       <Routes>
         <Route element={<AuthLayout />}>
           <Route path="/login" element={<Login />} />
-          <Route path="/reset-auth" element={<Reset />} />
         </Route>
 
         <Route path="/dashboard" element={<DashboardLayout />}>
