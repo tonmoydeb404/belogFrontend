@@ -17,7 +17,7 @@ const Header = () => {
         <Link to={"/"}>
           <img src={logo} alt="Be" className="w-[45px]" />
         </Link>
-        <div>
+        <div className="hidden sm:block">
           <h2 className="text-2xl font-bold mb-0.5">
             <Link to={"/"}>Belog</Link>
           </h2>
