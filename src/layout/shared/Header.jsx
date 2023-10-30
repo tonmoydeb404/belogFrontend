@@ -32,32 +32,36 @@ const Header = () => {
           <BiGridAlt className="text-xl" />
         </Dropdown.Toggle>
         <Dropdown.Menu className="w-52 bg-neutral rounded">
-          <Dropdown.Item>
-            <BiMoon />
-            Toggle Theme
-          </Dropdown.Item>
-          <Dropdown.Item>
-            <BiSearch />
-            Search
-          </Dropdown.Item>
-          <Link to={"/dashboard"}>
-            <Dropdown.Item>
+          <li>
+            <button>
+              <BiMoon />
+              Toggle Theme
+            </button>
+          </li>
+          <li>
+            <button>
+              <BiSearch />
+              Search
+            </button>
+          </li>
+          <li>
+            <Link to={"/dashboard"}>
               <BiSolidWidget />
               Dashboard
-            </Dropdown.Item>
-          </Link>
-          <Link to={"/reset-auth"}>
-            <Dropdown.Item>
+            </Link>
+          </li>
+          <li>
+            <Link to={"/reset-auth"}>
               <BiReset />
               Reset Password
-            </Dropdown.Item>
-          </Link>
-          <Link to={"/login"}>
-            <Dropdown.Item>
+            </Link>
+          </li>
+          <li>
+            <Link to={"/login"}>
               <BiLogIn />
               Login
-            </Dropdown.Item>
-          </Link>
+            </Link>
+          </li>
         </Dropdown.Menu>
       </Dropdown>
     </header>

@@ -1,4 +1,5 @@
 import { Button } from "react-daisyui";
+import { Link } from "react-router-dom";
 import DashboardStat from "../../../components/stats/DashboardStat";
 import PostsTable from "../../../components/tables/PostsTable";
 
@@ -12,9 +13,11 @@ const Posts = () => {
       </div>
 
       <div className="flex items-center mb-5">
-        <Button color="primary" size="sm" className="ml-auto">
-          Create New
-        </Button>
+        <Link to={"./create"} className="ml-auto">
+          <Button color="primary" size="sm">
+            Create New
+          </Button>
+        </Link>
       </div>
 
       <PostsTable />
