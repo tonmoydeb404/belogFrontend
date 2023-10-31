@@ -3,7 +3,6 @@ import {
   BiGridAlt,
   BiLogIn,
   BiMoon,
-  BiReset,
   BiSearch,
   BiSolidWidget,
 } from "react-icons/bi";
@@ -48,12 +47,6 @@ const Header = () => {
             <Link to={"/dashboard"}>
               <BiSolidWidget />
               Dashboard
-            </Link>
-          </li>
-          <li>
-            <Link to={"/reset-auth"}>
-              <BiReset />
-              Reset Password
             </Link>
           </li>
           <li>

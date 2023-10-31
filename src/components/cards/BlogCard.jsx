@@ -4,11 +4,14 @@ const BlogCard = () => {
   return (
     <div className="blog_card">
       <div className="card_body">
-        <Link to={"/post"}>
-          <h1 className="card_title text-2xl font-bold mb-0.5">
+        <h1 className="card_title text-2xl font-bold mb-0.5">
+          <Link
+            to={"/post"}
+            className="underline decoration-transparent decoration-wavy hover:decoration-primary duration-200 ease-out"
+          >
             Markdown Crash Course
-          </h1>
-        </Link>
+          </Link>
+        </h1>
         <p className="mb-4">27 June, 2023</p>
 
         <p className="card_text text-base leading-snug mb-3">
