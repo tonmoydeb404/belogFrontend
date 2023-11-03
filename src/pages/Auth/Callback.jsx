@@ -1,35 +1,35 @@
 import { useEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
+import { useLazyAuthResultQuery } from "../../api/authApi";
+import { logInKey } from "../../config/localStorage";
 
 const Callback = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
 
+  const [getAuthResult, { isSuccess, isError }] = useLazyAuthResultQuery();
+
+  const goTo = searchParams.get("goTo");
+  const auth = searchParams.get("auth");
+
   useEffect(() => {
-    const auth = searchParams.get("auth");
-    const goTo = searchParams.get("goTo");
+    // if there is a auth key then get auth result
+    if (auth) getAuthResult();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [auth]);
 
-    if (auth) {
-      fetch("http://localhost:9090/api/v1/auth/result", {
-        credentials: "include",
-      })
-        .then((response) => {
-          return response.json();
-        })
-        .then((v) => {
-          if (v?.status === "ERROR") localStorage.removeItem("BELOG_AUTH");
-          if (v?.status === "SUCCESS")
-            localStorage.setItem("BELOG_AUTH", "AUTHENICATED");
-          console.log(v);
-        })
-        .catch((err) => {
-          console.log(err);
-          localStorage.removeItem("BELOG_AUTH");
-        });
-
-      navigate(goTo || "/");
+  useEffect(() => {
+    if (isSuccess) {
+      // add login key and navigate
+      localStorage.setItem(logInKey, "TRUE");
+      navigate(goTo);
+    } else if (isError) {
+      // remove loginkey from localstorage and navigate
+      localStorage.removeItem(logInKey);
+      navigate(goTo);
     }
-  }, [searchParams, navigate]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isSuccess, isError, goTo]);
 
   return (
     <div className="flex w-full min-h-screen flex-col items-center justify-center">
