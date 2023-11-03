@@ -8,6 +8,7 @@ import CreatePost from "./pages/Dashboard/Posts/CreatePost";
 import UpdatePost from "./pages/Dashboard/Posts/UpdatePost";
 import Home from "./pages/Home";
 
+import Callback from "./pages/Auth/Callback";
 import Login from "./pages/Auth/Login";
 import Post from "./pages/Post";
 
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route element={<AuthLayout />}>
           <Route path="/login" element={<Login />} />
+          <Route path="/auth-callback" element={<Callback />} />
         </Route>
 
         <Route path="/dashboard" element={<DashboardLayout />}>
