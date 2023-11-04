@@ -1,15 +1,15 @@
 import { Dropdown } from "react-daisyui";
-import {
-  BiGridAlt,
-  BiLogIn,
-  BiMoon,
-  BiSearch,
-  BiSolidWidget,
-} from "react-icons/bi";
+import { BiGridAlt, BiMoon, BiSearch } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import { useAppSelector } from "../../app/hooks";
 import logo from "../../assets/images/logo.png";
+import { selectAuth } from "../../features/auth/authSlice";
+import PrivateMenu from "./PrivateMenu";
+import PublicMenu from "./PublicMenu";
 
 const Header = () => {
+  const { user } = useAppSelector(selectAuth);
+
   return (
     <header className="app_container mt-4 mb-8 flex items-center">
       <div className="flex items-center gap-2 mr-auto">
@@ -30,7 +30,7 @@ const Header = () => {
         <Dropdown.Toggle button={false} className="btn btn-square btn-ghost">
           <BiGridAlt className="text-xl" />
         </Dropdown.Toggle>
-        <Dropdown.Menu className="w-52 bg-neutral rounded">
+        <Dropdown.Menu className="w-52 bg-neutral rounded shadow-2xl z-[1000]">
           <li>
             <button>
               <BiMoon />
@@ -43,18 +43,7 @@ const Header = () => {
               Search
             </button>
           </li>
-          <li>
-            <Link to={"/dashboard"}>
-              <BiSolidWidget />
-              Dashboard
-            </Link>
-          </li>
-          <li>
-            <Link to={"/login"}>
-              <BiLogIn />
-              Login
-            </Link>
-          </li>
+          {user ? <PrivateMenu /> : <PublicMenu />}
         </Dropdown.Menu>
       </Dropdown>
     </header>

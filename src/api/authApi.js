@@ -18,10 +18,10 @@ export const authApi = createApi({
         try {
           dispatch(authLoading());
           const { data } = await queryFulfilled;
-          console.log(data);
+          // console.log(data);
           if (data.results?.user) dispatch(authSignin(data.results?.user));
         } catch (error) {
-          console.log(error);
+          console.error("Error: User account not found.");
         }
       },
     }),
@@ -35,7 +35,7 @@ export const authApi = createApi({
           const { data } = await queryFulfilled;
           if (data.results?.user) dispatch(authSignin(data.results?.user));
         } catch (error) {
-          console.log(error);
+          console.error("Error: Auth refresh failed.");
         }
       },
     }),
@@ -46,9 +46,10 @@ export const authApi = createApi({
       onQueryStarted: async (_arg, { dispatch, queryFulfilled }) => {
         try {
           await queryFulfilled;
-          dispatch(authSignout());
         } catch (error) {
-          console.log(error);
+          console.error("Error: Logout error.");
+        } finally {
+          dispatch(authSignout());
         }
       },
     }),

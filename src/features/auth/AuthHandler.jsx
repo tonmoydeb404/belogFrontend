@@ -17,7 +17,7 @@ const AuthHandler = ({ children }) => {
         // if there is a loginkey then refresh auth
         await refreshAuth().unwrap();
       } catch (error) {
-        console.log(error);
+        // console.log(error);
         // remove localstorage loginkey
         localStorage.removeItem(logInKey);
         // signout from authslice
